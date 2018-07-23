@@ -1,4 +1,6 @@
 // Basic init
+
+const path = require('path');
 const electron = require('electron')
 const {app, BrowserWindow} = electron
 
@@ -10,7 +12,13 @@ let mainWindow
 
 app.on('ready', () => {
 
-    mainWindow = new BrowserWindow()
+    mainWindow = new BrowserWindow({
+        webPreferences: {
+          webSecurity: false
+        }
+      });
+
+    //let winURL = path.resolve(`file://${__dirname}/app/index.html`)
 
     mainWindow.loadURL(`file://${__dirname}/app/index.html`)
 

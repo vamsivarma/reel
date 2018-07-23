@@ -2,7 +2,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
 
-    watch: true,
+    watch: false,
 
     target: 'electron-renderer',
 
@@ -13,10 +13,16 @@ module.exports = {
         publicPath: 'build/',
         filename: 'bundle.js'
     },
+
     resolve: {
         alias: {
             'themes/default/assets': 'node_modules/semantic-ui-css/themes/default/assets'
        }
+    },
+
+    node: {
+      __dirname: false,
+      __filename: false
     },
 
     module: {
@@ -25,7 +31,7 @@ module.exports = {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
                 options: {
-                    presets: ['react']
+                    presets: ['react', 'es2015', 'stage-1']
                 }
             },
             {
