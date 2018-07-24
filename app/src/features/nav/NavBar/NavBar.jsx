@@ -31,7 +31,12 @@ class NavBar extends Component {
             <img src="assets/logo.png" alt="logo" />
             Rome Tourism Tracker
           </Menu.Item>
-          <Menu.Item as={NavLink} to="/events" name="Events" />
+          {/*<Menu.Item as={NavLink} to="/events" name="Events" />*/}
+
+          <Menu.Item as={NavLink} to="/landingPage" name="Landing" />
+
+          <Menu.Item as={NavLink} to="/touristPage" name="Tourist" />
+          
           {authenticated &&
           <Menu.Item as={NavLink} to="/people" name="People" />}
 
@@ -43,7 +48,7 @@ class NavBar extends Component {
               floated="right"
               positive
               inverted
-              content="Create New Event"
+              content="Create Event"
             />
           </Menu.Item>}
           {authenticated ? (

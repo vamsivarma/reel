@@ -9,6 +9,8 @@ import UserDetailedPage from '../../features/user/UserDetailed/UserDetailedPage'
 import PeopleDashboard from '../../features/user/PeopleDashboard/PeopleDashboard';
 import EventDetailedPage from '../../features/event/EventDetailed/EventDetailedPage';
 import HomePage from '../../features/home/HomePage';
+import LandingPage from '../../landing/LandingPage';
+import TouristDashboard from '../../tourist/TouristDashboard/TouristDashboard';
 
 class MainComponent extends Component {
   render() {
@@ -31,6 +33,8 @@ class MainComponent extends Component {
                   <Route path="/profile/:id" component={UserDetailedPage} />
                   <Route path="/settings" component={SettingsDashboard} />
                   <Route path="/createEvent" component={EventForm} />
+                  <Route path="/landingPage" component={LandingPage} />
+                  <Route path="/touristPage" component={TouristDashboard} />
                 </Switch>
               </Container>
             </div>
