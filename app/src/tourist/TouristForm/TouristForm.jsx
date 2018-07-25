@@ -16,14 +16,23 @@ class TouristForm extends Component {
   }
 
   componentDidMount() {
+    console.log('Inside Component Did Mount');
+
     if (this.props.selectedTourist !== null) {
       this.setState({
         Tourist: this.props.selectedTourist
+      })
+    } else {
+      this.setState({
+        Tourist: emptyTourist
       })
     }
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log('Inside Component Will Receive Props');
+    console.log(nextProps.selectedTourist);
+
     if (nextProps.selectedTourist !== this.props.selectedTourist) {
       this.setState({
         Tourist: nextProps.selectedTourist || emptyTourist
@@ -39,6 +48,10 @@ class TouristForm extends Component {
       this.props.createTourist(this.state.Tourist)
     }
 
+    this.setState({
+      Tourist: emptyTourist
+    })
+
   }
 
   onInputChange = (evt) => {
@@ -53,6 +66,11 @@ class TouristForm extends Component {
 
     const {handleCancel} = this.props;
     const {Tourist} = this.state;
+
+    console.log("Component rendering");
+
+    console.log(Tourist);
+
     return (
       <Segment>
         <Form onSubmit={this.onFormSubmit}>

@@ -4,7 +4,104 @@ import cuid from 'cuid';
 import TouristList from '../TouristList/TouristList';
 import TouristForm from '../TouristForm/TouristForm';
 
-const touristDashboard = [];
+const touristDashboard = [
+  {
+    id: '1',
+    title: 'John',
+    date: '2018-03-27',
+    category: 'culture',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+    city: 'London, UK',
+    venue: "Vatican",
+    hostedBy: 'Bob',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/men/20.jpg',
+    attendees: [
+      {
+        id: 'a',
+        name: 'Bob',
+        photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
+      },
+      {
+        id: 'b',
+        name: 'Tom',
+        photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
+      }
+    ]
+  },
+  {
+    id: '2',
+    title: 'Jane',
+    date: '2018-03-27',
+    category: 'drinks',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+    city: 'London, UK',
+    venue: 'Punch & Judy, Henrietta Street, London, UK',
+    hostedBy: 'Bob',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/men/22.jpg',
+    attendees: [
+      {
+        id: 'b',
+        name: 'Tom',
+        photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
+      },
+      {
+        id: 'a',
+        name: 'Bob',
+        photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
+      }
+    ]
+  },
+  {
+    id: '3',
+    title: 'Jessica',
+    date: '2018-03-27',
+    category: 'culture',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+    city: 'London, UK',
+    venue: "Vatican",
+    hostedBy: 'Bob',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/men/20.jpg',
+    attendees: [
+      {
+        id: 'a',
+        name: 'Bob',
+        photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
+      },
+      {
+        id: 'b',
+        name: 'Tom',
+        photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
+      }
+    ]
+  },
+  {
+    id: '4',
+    title: 'Jerry',
+    date: '2018-03-27',
+    category: 'drinks',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+    city: 'London, UK',
+    venue: 'Punch & Judy, Henrietta Street, London, UK',
+    hostedBy: 'Bob',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/men/22.jpg',
+    attendees: [
+      {
+        id: 'b',
+        name: 'Tom',
+        photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
+      },
+      {
+        id: 'a',
+        name: 'Bob',
+        photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
+      }
+    ]
+  }
+];
 
 class TouristDashboard extends Component {
   state = {
@@ -54,7 +151,8 @@ class TouristDashboard extends Component {
     const updatedTourists = [...this.state.Tourists, newTourist];
     this.setState({
       Tourists: updatedTourists,
-      isOpen: false
+      isOpen: false,
+      selectedTourist: null
     })
   }
 

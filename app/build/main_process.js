@@ -20,6 +20,6 @@ app.on('ready', () => {
 
     //let winURL = path.resolve(`file://${__dirname}/app/index.html`)
 
-    mainWindow.loadURL(`file://${__dirname}/app/build/index.html`)
+    mainWindow.loadURL(`file://${__dirname}/index.html`)
 
 })
